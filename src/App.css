@@ -12,10 +12,29 @@
 }
 
 .frm-bg{
-  background: rgb(238,174,202);
-  border-radius: 15px;
+  background: linear-gradient(90deg, rgba(32,205,163,1) 0%, rgba(89,201,78,1) 100%);
 }
 
 body{
   overflow-y: scroll;
+}
+
+.frm-width{
+  width: 80%;
+}
+
+.pntr{
+  cursor: pointer;
+}
+
+.brd-radis{
+  border-radius: 1rem;
+}
+
+.decoration-no{
+  text-decoration: none;
+}
+
+.ml-left{
+  margin-left: 2rem !important;
 }

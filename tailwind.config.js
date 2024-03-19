@@ -1,3 +1,5 @@
+import { red } from '@mui/material/colors';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -16,13 +18,14 @@ export default {
       'purple': '#7e5bef',
       'pink': '#ff49db',
       'orange': '#ff7849',
-      'green': '#13ce66',
+      'green': '#07ba13',
       'yellow': '#ffc82c',
       'gray-dark': '#273444',
       'gray': '#8492a6',
       'gray-light': '#d3dce6',
       'white' : '#fff',
-      'albin' : '#000'
+      'albin' : '#000',
+      'red' : '#d50000'
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
