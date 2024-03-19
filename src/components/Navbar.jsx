@@ -29,9 +29,9 @@ const Navbar = () => {
 
           {/* Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" aria-current="page">Home</a>
-            <a href="#" className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" aria-current="page">About</a>
-            <a href="#" className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" aria-current="page">Contact</a>
+            <a href="#" className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" aria-current="page">Dashboard</a>
+            <a href="#" className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" aria-current="page">Password Manager</a>
+            <a href="#" className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" aria-current="page">Viewer</a>
           </div>
 
           {/* User profile */}

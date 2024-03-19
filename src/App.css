@@ -38,3 +38,12 @@ body{
 .ml-left{
   margin-left: 2rem !important;
 }
+
+.user-menu{
+  position: absolute;
+  right: 0.1rem;
+}
+
+.list-dot-no{
+  list-style: none;
+}
