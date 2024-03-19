@@ -18,6 +18,8 @@
     "@mui/joy": "^5.0.0-beta.31",
     "@mui/lab": "^5.0.0-alpha.168",
     "@mui/material": "^5.15.13",
+    "@mui/x-data-grid": "^6.19.6",
+    "@mui/x-data-grid-generator": "^6.19.6",
     "@reduxjs/toolkit": "^2.2.1",
     "axios": "^1.6.7",
     "react": "^18.2.0",

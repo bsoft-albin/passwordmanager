@@ -2,6 +2,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { useState } from 'react';
+import DataTable from './DataTable';
 
 
 export default function Body() {
@@ -88,6 +89,8 @@ export default function Body() {
                     </div>
                 </div>
             </div>
+
+        <DataTable />
         </div>
     );
   }
