@@ -12,7 +12,6 @@ export default function DataTable(){
 
   useEffect(() =>{
     dispatcher(biodatas())
-    console.log(apiData)
   }, [])
 
   useEffect(() =>{
@@ -28,77 +27,39 @@ export default function DataTable(){
                   <thead className="bg-white border-b">
                     <tr>
                       <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                        #
+                        Actions
                       </th>
                       <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                        First
+                        Name
                       </th>
                       <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                        Last
+                        Email
                       </th>
                       <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                        Handle
+                        Age
+                      </th>
+                      <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        Contact
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="bg-gray-100 border-b">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        Mark
-                      </td>
-                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        Otto
-                      </td>
-                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        @mdo
-                      </td>
-                    </tr>
-                    <tr className="bg-white border-b">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
-                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        Jacob
-                      </td>
-                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        Dillan
-                      </td>
-                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        @fat
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-100 border-b">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
-                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        Mark
-                      </td>
-                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        Twen
-                      </td>
-                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        @twitter
-                      </td>
-                    </tr>    
-                    <tr className="bg-white border-b">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">4</td>
-                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        Bob
-                      </td>
-                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        Dillan
-                      </td>
-                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        @fat
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-100 border-b">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5</td>
-                      <td colSpan="2" className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap text-center">
-                        Larry the Bird
-                      </td>
-                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        @twitter
-                      </td>
-                    </tr>
+                    {apiData?.userData.map((item, key) => (
+                      <tr className="bg-gray-100 border-b" key={key} >
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.id}</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.name}</td>
+                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          {item.email}
+                        </td>
+                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          {item.age}
+                        </td>
+                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          {item.contact}
+                        </td>
+                      </tr>
+                    ) )}
+                    
                   </tbody>
                 </table>
               </div>

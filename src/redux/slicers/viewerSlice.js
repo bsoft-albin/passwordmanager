@@ -5,7 +5,7 @@ import { biodatas } from '../actions/viewerActions'
 const userSlice = createSlice({
   name: 'userDataAPI',
   initialState: {
-    userData: null,
+    userData: [],
     loading: false,
     error: null,
   },
