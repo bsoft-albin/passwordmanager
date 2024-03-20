@@ -1,16 +1,5 @@
-import React from 'react'
-import Avatar from '@mui/material/Avatar';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Logout from '@mui/icons-material/Logout';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
-import Divider from '@mui/material/Divider';
-import Box from '@mui/material/Box';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
+
+import { Link } from 'react-router-dom';
 import Dropdown from './Dropdown';
 
 
@@ -29,9 +18,9 @@ const Navbar = () => {
 
           {/* Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" aria-current="page">Dashboard</a>
-            <a href="#" className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" aria-current="page">Password Manager</a>
-            <a href="#" className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" aria-current="page">Viewer</a>
+            <Link className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" >Dashboard</Link>
+            <Link className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" >Password Manager</Link>
+            <Link className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" to="/data-table" >Viewer</Link>
           </div>
 
           {/* User profile */}

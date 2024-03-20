@@ -90,7 +90,7 @@ export default function Body() {
                 </div>
             </div>
 
-        <DataTable />
+
         </div>
     );
   }
