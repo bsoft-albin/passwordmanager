@@ -1,11 +1,13 @@
 
-import Box from '@mui/material/Box';
-import LinearProgress from '@mui/material/LinearProgress';
-
 export default function Loader() {
   return (
-    <Box sx={{ width: '100%' }}>
-      <LinearProgress />
-    </Box>
-  );
+    <div className='flex items-center justify-center'>
+      <div className="loading-wave">
+        <div className="loading-bar"></div>
+        <div className="loading-bar"></div>
+        <div className="loading-bar"></div>
+        <div className="loading-bar"></div>
+      </div>
+    </div>
+  )
 }

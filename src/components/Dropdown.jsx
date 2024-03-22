@@ -40,14 +40,14 @@ const Dropdown = () => {
       {isDropdownOpen && (
         <div
   id="userDropdown"
-  class="user-menu z-10 bg-green divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+  className="user-menu z-10 bg-green divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
 >
-  <ul class="space-y-2 py-2 list-dot-no user-menu-lftpading">
-    <li class="text-gray-800 dark:text-gray-200 ml-5">Settings</li>
-    <li class="text-gray-800 dark:text-gray-200 ml-5">Profile</li>
-    <li class="text-gray-800 dark:text-gray-200 ml-5">Toolbar</li>
-    <hr class="border-gray-200 dark:border-gray-600" />
-    <li class="text-gray-800 dark:text-gray-200 ml-5">Logout</li>
+  <ul className="space-y-2 py-2 list-dot-no user-menu-lftpading">
+    <li className="text-gray-800 dark:text-gray-200 ml-5">Settings</li>
+    <li className="text-gray-800 dark:text-gray-200 ml-5">Profile</li>
+    <li className="text-gray-800 dark:text-gray-200 ml-5">Toolbar</li>
+    <hr className="border-gray-200 dark:border-gray-600" />
+    <li className="text-gray-800 dark:text-gray-200 ml-5">Logout</li>
   </ul>
 </div>
       )}

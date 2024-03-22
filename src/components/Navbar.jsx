@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import Dropdown from './Dropdown';
 
 
-const Navbar = () => {
+const Navbar = ({refFunction}) => {
 
+  const handleClick = (active) =>{
+    refFunction(active)
+  }
 
   return (
     <div>
@@ -18,9 +21,9 @@ const Navbar = () => {
 
           {/* Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" >Dashboard</Link>
-            <Link className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" >Password Manager</Link>
-            <Link className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" to="/data-table" >Viewer</Link>
+            <Link onClick={() =>handleClick(0)} className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" >Dashboard</Link>
+            <Link onClick={() =>handleClick(1)} className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" >Password Manager</Link>
+            <Link onClick={() =>handleClick(2)} className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" to="/data-table" >Viewer</Link>
           </div>
 
           {/* User profile */}
