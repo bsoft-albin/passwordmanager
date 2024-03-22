@@ -7,10 +7,15 @@ const userSlice = createSlice({
   initialState: {
     userData: [],
     loading: false,
-    error: null,
+    // error: null,
+    // fnState : () =>{
+    //   alert("Working!!")
+    // }
   },
   reducers: {
-    
+    fnCheckmethod : () =>{
+      alert("Hello bro")
+    }
   },
   extraReducers: (builder) => {
     builder

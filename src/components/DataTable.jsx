@@ -17,10 +17,11 @@ export default function DataTable(){
 
   useEffect(() =>{
     console.log(apiData)
+    //apiData.fnState()
   }, [apiData?.userData])
 
     return(
-      apiData?.loading == true ? <Loader /> : <div className="wdt-full hgt-full flex flex-col">
+      apiData.loading == true ? <Loader />  : <div className="wdt-full hgt-full flex flex-col">
       <div className="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
         <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
           <div className="overflow-hidden">
@@ -67,8 +68,6 @@ export default function DataTable(){
         </div>
       </div>
     </div>
-        
       
-       
     )
 }

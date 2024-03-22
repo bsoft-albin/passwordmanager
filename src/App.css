@@ -62,8 +62,8 @@ body{
 }
 
 .loading-bar {
-  width: 20px;
-  height: 10px;
+  width: 30px;
+  height: 40px;
   margin: 0 5px;
   background-color: #3498db;
   border-radius: 5px;
@@ -84,20 +84,22 @@ body{
 
 @keyframes loading-wave-animation {
   0% {
-    height: 10px;
+    height: 40px;
   }
 
   50% {
-    height: 50px;
+    height: 100px;
   }
 
   100% {
-    height: 10px;
+    height: 40px;
   }
 }
 
+/*  End Of Loader  */
+
 .hgt-full{
-  height: 100%;
+  height: 100vh;
 }
 .wdt-full{
   width: 100%;
