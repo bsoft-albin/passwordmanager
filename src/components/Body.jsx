@@ -2,6 +2,8 @@
 import PageNotFound from './PageNotFound'
 import HomePage from './HomePage'
 import DataTable from './DataTable'
+import Login from './Login'
+import Register from './Register'
 
 
 export default function Body({renderComponent, gotoNavigate}) {
@@ -19,6 +21,14 @@ export default function Body({renderComponent, gotoNavigate}) {
             return(
                 <DataTable />
              )
+        case 3 :
+            return(
+                <Login />
+            )
+        case 4 :
+            return(
+                <Register />
+           )
         default :
             return(
                 <PageNotFound fngotohome={gotoNavigate} />

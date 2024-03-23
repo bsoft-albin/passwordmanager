@@ -21,9 +21,11 @@ const Navbar = ({refFunction}) => {
 
           {/* Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link onClick={() =>handleClick(0)} className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" >Dashboard</Link>
-            <Link onClick={() =>handleClick(1)} className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" >Password Manager</Link>
-            <Link onClick={() =>handleClick(2)} className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" to="/data-table" >Viewer</Link>
+            <a onClick={() =>handleClick(0)} className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" >Dashboard</a>
+            <a onClick={() =>handleClick(1)} className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" >Password Manager</a>
+            <Link className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" to="/data-table" >Viewer</Link>
+            <a onClick={() =>handleClick(3)} className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" >Login</a>
+            <a onClick={() =>handleClick(4)} className="decoration-no py-2 px-3 text-albin bg-blue-700 rounded" >Register</a>
           </div>
 
           {/* User profile */}
