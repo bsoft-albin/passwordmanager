@@ -14,7 +14,7 @@ const Navbar = ({refFunction}) => {
       <nav className="bg-blue border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           {/* Logo and brand name */}
-          <a href="https://flowbite.com/" className="decoration-no flex items-center space-x-3">
+          <a className="decoration-no flex items-center space-x-3">
             <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
             <span className="text-2xl font-semibold whitespace-nowrap text-white">My Store</span>
           </a>

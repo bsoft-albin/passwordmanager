@@ -46,6 +46,7 @@ const Dropdown = () => {
     <li className="text-gray-800 dark:text-gray-200 ml-5">Settings</li>
     <li className="text-gray-800 dark:text-gray-200 ml-5">Profile</li>
     <li className="text-gray-800 dark:text-gray-200 ml-5">Toolbar</li>
+    <li className="text-gray-800 dark:text-gray-200 ml-5">Add Tab</li>
     <hr className="border-gray-200 dark:border-gray-600" />
     <li className="text-gray-800 dark:text-gray-200 ml-5">Logout</li>
   </ul>
