@@ -137,7 +137,7 @@ const HomePage = () => {
                                 <div className="flex items-center h-5">
                                 <input id="remember" type="checkbox" value="" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" />
                                 </div>
-                                <label htmlFor="remember" className="ms-2 text-sm font-bold text-blue dark:text-gray-300">I agree with the <a href="#" className="text-yellow hover:underline dark:text-blue-500">terms and conditions.</a></label>
+                                <label htmlFor="remember" className="ms-2 text-sm font-bold text-blue dark:text-gray-300"><a href="#" className="text-yellow hover:underline dark:text-blue-500">I deserve that the given password is created by me!!</a></label>
                             </div>
                             <div className="flex items-center justify-center">
                                 <button type="submit" className="text-white pntr bg-[#059e14] hover:bg-[#059e14]/90 focus:ring-4 focus:outline-none focus:ring-[#059e14]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2">

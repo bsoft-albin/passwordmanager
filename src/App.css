@@ -104,7 +104,9 @@ body{
 .wdt-full{
   width: 100%;
 }
-
+#uname{
+	border-radius: 10px;
+}
 
 .loginBox {
 	position: absolute;
