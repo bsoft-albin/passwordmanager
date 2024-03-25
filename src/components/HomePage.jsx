@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import { useState } from 'react';
 import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup'
+import { Toaster, ToasterContext } from 'react-toaster';
 
 
 const HomePage = () => {
@@ -15,12 +16,17 @@ const HomePage = () => {
       setValue(newValue);
     };
 
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+
     const myYupSchema = Yup.object({
         userName: Yup.string().required('Username is required').max(40,"username cannot be Greater than 40 Charcters"),
         password: Yup
             .string()
             .required('Password is required')
-            .min(8, 'Password must be at least 8 characters long'),
+            .matches(passwordRegex, 'Password must contain at least one uppercase, one lowercase, one number, and one special character')
+            .min(12, 'Password must be at least 12 characters long'),
         confirmPassword: Yup
             .string()
             .oneOf([Yup.ref('password'), null], 'Passwords must match')
@@ -29,8 +35,8 @@ const HomePage = () => {
         siteUrl : Yup.string().required("enter site url"),
         notes : Yup.string().required('Notes is required'),
         email : Yup
-            .string()
-            .email('Invalid email format')
+            .string().max(40,"maximum 40 characters are allowed")
+            .matches(emailRegex,'Invalid email format')
             .required('Email ID is required'),
     })
 
@@ -92,7 +98,7 @@ const HomePage = () => {
                                 </div>
                                 <div>
                                     <label htmlFor="email" className="block mb-2 text-sm font-bold text-green">Email Id :</label>
-                                    <input type="email" name="email" className=" border border-gray-300 text-albin text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-40 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" onChange={myform.handleChange} />
+                                    <input type="email" name="email" className="border border-gray-300 text-albin text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-40 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" onChange={myform.handleChange} />
                                     <div style={{ color: 'red' }}>
                                         {myform.touched.email && myform.errors.email}
                                     </div>
@@ -152,6 +158,7 @@ const HomePage = () => {
                 </div>
             </div>
         </div>
+
   )
 }
 

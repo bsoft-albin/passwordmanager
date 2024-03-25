@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import Dropdown from './Dropdown';
+import logoas from '../assets/icons/logo.png'
 
 
 const Navbar = ({refFunction}) => {
@@ -15,7 +16,7 @@ const Navbar = ({refFunction}) => {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           {/* Logo and brand name */}
           <a className="decoration-no flex items-center space-x-3">
-            <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
+            <img src={logoas} className="h-8" alt="Flowbite Logo" />
             <span className="text-2xl font-semibold whitespace-nowrap text-white">My Store</span>
           </a>
 
