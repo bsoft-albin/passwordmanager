@@ -20,7 +20,7 @@ export default function Body({renderComponent, gotoNavigate}) {
         case 2 :
             return(
                 <DataTable />
-             )
+            )
         case 3 :
             return(
                 <Login />
@@ -32,7 +32,7 @@ export default function Body({renderComponent, gotoNavigate}) {
         default :
             return(
                 <PageNotFound fngotohome={gotoNavigate} />
-            )
+        )
     }
   }
 

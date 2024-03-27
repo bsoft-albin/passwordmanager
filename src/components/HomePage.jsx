@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { useState } from 'react';
 import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup'
+import { useDispatch, useSelector } from 'react-redux';
+import { createNewWebPassword } from '../redux/actions/webkeysActions';
 
 
 const HomePage = () => {
@@ -15,28 +17,44 @@ const HomePage = () => {
       setValue(newValue);
     };
 
+    const webKeyState = useSelector((s) => s.usersWebKeys)
+
+    const dispatcher = useDispatch()
+
+    useEffect(() =>{
+       
+    }, [])
+
+    
+
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 
+    //.matches(passwordRegex, 'Password must contain at least one uppercase, one lowercase, one number, and one special character')
     const myYupSchema = Yup.object({
-        userName: Yup.string().required('Username is required').max(40,"username cannot be Greater than 40 Charcters"),
+        userName: Yup.string().required('Username is required').max(40,"Username cannot be Greater than 40 Characters"),
         password: Yup
             .string()
             .required('Password is required')
-            .matches(passwordRegex, 'Password must contain at least one uppercase, one lowercase, one number, and one special character')
+            
             .min(12, 'Password must be at least 12 characters long'),
         confirmPassword: Yup
             .string()
             .oneOf([Yup.ref('password'), null], 'Passwords must match')
             .required('Confirm Password is required'),
-        siteName : Yup.string().required("enter site name"),
-        siteUrl : Yup.string().required("enter site url"),
+        siteName : Yup.string().required("Enter Site Name"),
+        siteUrl : Yup.string().required("Enter Site URL"),
         notes : Yup.string().required('Notes is required'),
         email : Yup
             .string().max(40,"maximum 40 characters are allowed")
             .matches(emailRegex,'Invalid email format')
-            .required('Email ID is required'),
+            .required('Email Id is required'),
+        remember: Yup.boolean().test(
+            'remember-checked',
+            'You must accept the terms and conditions',
+            (value) => value === true
+          ),
     })
 
     const myform = useFormik(
@@ -48,11 +66,21 @@ const HomePage = () => {
                 siteUrl : '',
                 password : '',
                 confirmPassword : '',
-                notes : ''
+                notes : '',
+                remember : false
             },
             validationSchema : myYupSchema,
             onSubmit : (values) =>{
-                console.log(values)
+                const Obj = {
+                    userName : values.userName,
+                    password : values.password,
+                    siteName : values.siteName,
+                    siteUrl : values.siteUrl,
+                    notes : values.notes,
+                    email : values.email
+                }
+                
+                dispatcher(createNewWebPassword(Obj))
             }
             
         }
@@ -140,7 +168,11 @@ const HomePage = () => {
                             </div>
                             <div className="flex items-start mb-6">
                                 <div className="flex items-center h-5">
-                                <input id="remember" type="checkbox" value="" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" />
+                                <input id="remember" name='remember' type="checkbox" checked={myform.values.remember}
+            onChange={() =>  myform.setFieldValue('remember', !myform.values.remember)} className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" />
+                                <div style={{ color: 'red' }}>
+                                    {myform.touched.remember && myform.errors.remember}
+                                </div>
                                 </div>
                                 <label htmlFor="remember" className="ms-2 text-sm font-bold text-blue dark:text-gray-300"><a href="#" className="text-yellow hover:underline dark:text-blue-500">I deserve that the given password is created by me!!</a></label>
                             </div>
