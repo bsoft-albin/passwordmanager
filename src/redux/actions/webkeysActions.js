@@ -1,22 +1,53 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from 'axios';
 
-const axiosInstance = axios.create({
-  headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-  },
-  timeout: 30000, 
-});
 
 export const createNewWebPassword = createAsyncThunk(
-    'passcode/webappstore.php',
-  async (data,thunkAPI) => {
+  'passcode/webappstore.php',
+  async (data, thunkAPI) => {
     try {
-      const response = await axiosInstance.post('https://albinnew23.000webhostapp.com/api/passcode/webappstore.php', data);
-      return response.data;
+      const response = await fetch(
+        'https://albinnew23.000webhostapp.com/api/passcode/webappstore.php',
+        {
+          method: 'POST',
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        return thunkAPI.rejectWithValue(errorData);
+      }
+
+      const responseData = await response.json();
+      return responseData;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-)
+);
+
+
+
+export const fetchUserData = createAsyncThunk(
+  'userData/fetchUserData',
+  async (_, thunkAPI) => {
+    try {
+      const response = await fetch(
+        'http://albin23.infinityfreeapp.com/sql.php',
+        {
+          method: 'GET'
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        return thunkAPI.rejectWithValue(errorData);
+      }
+
+      const responseData = await response.json();
+      return responseData;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

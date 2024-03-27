@@ -1,12 +1,13 @@
 
 import { createSlice } from "@reduxjs/toolkit";
-import { createNewWebPassword } from '../actions/webkeysActions';
+import { createNewWebPassword,fetchUserData } from '../actions/webkeysActions';
 
 
 const newState = {
     error : null,
     passwords : null,
-    isLoading : false
+    isLoading : false,
+    newSiteData : null
 }
 
 const webkeySlice = createSlice({
@@ -30,6 +31,19 @@ const webkeySlice = createSlice({
           state.passwords = action.payload;
         })
         .addCase(createNewWebPassword.rejected, (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+        })
+
+        .addCase(fetchUserData.pending, (state) => {
+          state.isLoading = true;
+          state.error = null;
+        })
+        .addCase(fetchUserData.fulfilled, (state, action) => {
+          state.isLoading = false;
+          state.newSiteData = action.payload;
+        })
+        .addCase(fetchUserData.rejected, (state, action) => {
           state.isLoading = false;
           state.error = action.payload;
         });

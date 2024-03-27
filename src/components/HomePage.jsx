@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup'
 import { useDispatch, useSelector } from 'react-redux';
-import { createNewWebPassword } from '../redux/actions/webkeysActions';
+import { createNewWebPassword ,fetchUserData} from '../redux/actions/webkeysActions';
 
 
 const HomePage = () => {
@@ -22,7 +22,7 @@ const HomePage = () => {
     const dispatcher = useDispatch()
 
     useEffect(() =>{
-       
+       console.log(webKeyState)
     }, [])
 
     
@@ -81,6 +81,7 @@ const HomePage = () => {
                 }
                 
                 dispatcher(createNewWebPassword(Obj))
+               //dispatcher(fetchUserData())
             }
             
         }
