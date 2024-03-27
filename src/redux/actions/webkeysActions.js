@@ -26,8 +26,6 @@ export const createNewWebPassword = createAsyncThunk(
   }
 );
 
-
-
 export const fetchUserData = createAsyncThunk(
   'userData/fetchUserData',
   async (_, thunkAPI) => {
