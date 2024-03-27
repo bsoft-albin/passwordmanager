@@ -1,5 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { useGetApiConnector, usePostApiConnector } from "../../hooks/useConnector";
 
+
+// export const createNewWebPassword = (data) =>{
+
+//   const sendHook = usePostApiConnector('passcode/webappstore.php','https://albinnew23.000webhostapp.com/api/passcode/webappstore.php')
+//   sendHook(data)
+
+// }
 
 export const createNewWebPassword = createAsyncThunk(
   'passcode/webappstore.php',
